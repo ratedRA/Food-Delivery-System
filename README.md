@@ -17,7 +17,7 @@ password - servfect
 # result
 pick-up, drop coordinates, delivery partner name and total distance travelled.
 
-# Eculidean diatence has been used as a measure for finding the closest delivery partner.
+## Eculidean distance has been used as a measure for finding the closest delivery partner.
 
 API for getting all Restaurants - http://127.0.0.1:8000/api/v1/restaurants/
 
