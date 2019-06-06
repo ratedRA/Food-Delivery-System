@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>my header</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="main-content">
+    <div class="profile mb-5">
+        <div class="card p-3">
+            <h1>User Profile</h1>
+
+            <form class="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="showcase1 py-5">
+                    <div class="preview img-wrapper"></div>
+
+                    <div class="file-upload-wrapper text-center py-4">
+                        {{form.profile_image}}
+                    </div>
+                </div> <hr>
+                <div class="form-group">
+                    <label for="">Name</label>
+                    {{ form.user_name }}
+                </div>
+                <div class="form-group">
+                    <label for="">contact no</label>
+                    {{form.contact_no}}
+                </div>
+                <div class="form-group">
+                    <label for="">email</label>
+                    {{ form.email }}
+                </div>
+                <div class="form-group">
+                    <label for="">x</label>
+                    {{form.x}}
+                </div>
+                <div class="form-group">
+                    <label for="">y</label>
+                    {{form.y}}
+                </div>
+
+                <button type="submit" class="btn btn-dark my-2">upload</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>my header</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">alternateswiggy beta</a>
+    </div>
+   
+       
+    <ul class="nav navbar-nav navbar-right">
+    	{% if request.user.is_authenticated %}
+                <li><a class="active" href="{% url 'logout' %}">logout</a></li>
+                {% else %}
+                <li><a href="signup/"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                {% endif %}
+      
+      
+    </ul>
+  </div>
+</nav>
+
+	<div class = "container">
+		<div class = "row">
+			<div class="col-md-9">
+				<h3>Available Restaurants</h3>
+				{% for items in qs %}
+				<b>#{{items.res_name}}</b><br>
+				<img src = "{{items.res_image.url}}" style="max-height: 150px;"><br>
+				 <button type="button" class="btn btn-success"><a href = 'order?query_name={{ items.id }}'><b style="color:#fff;">order from it</b></a></button><br>
+				{%endfor%}
+			</div>
+
+			<div class = "col-md-3">
+				<h3> Add Restaurants</h3>
+    <form method = "post" enctype="multipart/form-data" action=''> 
+        {% csrf_token %} 
+        {{ form }} 
+        <button type="submit">Upload</button> 
+    </form> 
+</div>
+</div>
+</div>
+
+</body>
+</html>
