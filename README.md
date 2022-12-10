@@ -1,5 +1,5 @@
 # Food-Delivery-System
-A system for choosing the closest delivery partner for a food delivery organisation.
+A system for choosing the closest delivery partner for a food delivery service.
 
 /* Django  - 2.2.2
    Dango Rest Framework - 3.9.2
